@@ -2,9 +2,10 @@
 A production-grade ML inference system with CI/CD, monitoring, versioning, and auto-rollback
 
 
+python3 app/models/loader.py
 
 ## Outline
-ml-serving-pipeline/
+<!-- ml-serving-pipeline/
 │
 ├── README.md                    # Project overview, instructions, architecture diagram link
 ├── requirements.txt             # Python dependencies
@@ -43,4 +44,4 @@ ml-serving-pipeline/
 │   └── monitoring_setup.md
 │
 └── data/                        # Optional: test inputs / synthetic data for evaluation
-    └── sample_inputs.json
+    └── sample_inputs.json -->
