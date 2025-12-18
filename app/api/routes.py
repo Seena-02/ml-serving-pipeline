@@ -1,7 +1,8 @@
+import torch
 from fastapi import APIRouter, HTTPException
+
 from app.api.schemas import PredictRequest, PredictResponse
 from app.models.loader import get_model
-import torch
 
 router = APIRouter()
 model = get_model()
@@ -15,7 +16,7 @@ def predict_endpoint(request: PredictRequest):
     if len(request.data) != EXPECTED_INPUT_SIZE:
         raise HTTPException(
             status_code=422,
-            detail=f"Invalid input size: expected {EXPECTED_INPUT_SIZE}, got {len(request.data)}"
+            detail=f"Invalid input size: expected {EXPECTED_INPUT_SIZE}, got {len(request.data)}",
         )
 
     # Convert input list to tensor and reshape for MNIST (1, 1, 28, 28)
