@@ -9,7 +9,7 @@ model = get_model()  # load once at module level
 @router.post("/predict", response_model=PredictResponse)
 def predict_endpoint(request: PredictRequest):
     # Convert input list to tensor (adjust shape as needed)
-    input_tensor = torch.tensor([request.data], dtype=torch.float32)
+    input_tensor = torch.tensor([request.data], dtype=torch.float32).view(1, 1, 28, 28)
 
     with torch.no_grad():
         output_tensor = model(input_tensor)
