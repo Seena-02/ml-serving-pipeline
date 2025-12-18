@@ -30,7 +30,7 @@ def get_model():
         _model = MNISTClassifier()
 
         # Load the state dict
-        state_dict = torch.load(MODEL_PATH, weights_only=True)
+        state_dict = torch.load(MODEL_PATH, weights_only=True, map_location=torch.device('cpu'))
         _model.load_state_dict(state_dict)
 
         _model.eval()  # set to inference mode
